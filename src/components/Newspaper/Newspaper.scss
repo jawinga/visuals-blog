@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Merriweather:wght@300;400;700&family=Old+Standard+TT:wght@400;700&display=swap");
+
+.newspaper-wrapper {
+  perspective: 1000px;
+}
+
+.newspaper-container {
+  width: 520px;
+  height: 680px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f9f7f1 0%, #f5f2e8 50%, #f0ebe0 100%);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), 0 2px 2px rgba(0, 0, 0, 0.06),
+    0 4px 4px rgba(0, 0, 0, 0.06), 0 8px 8px rgba(0, 0, 0, 0.06),
+    0 16px 16px rgba(0, 0, 0, 0.06), inset 0 0 100px rgba(139, 119, 101, 0.03);
+  position: relative;
+  padding: 0;
+  border: 1px solid #d4c5b0;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.newspaper-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(139, 119, 101, 0.02) 2px,
+    rgba(139, 119, 101, 0.02) 4px
+  );
+  pointer-events: none;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.masthead {
+  padding: 1.25rem 2rem 0.75rem;
+  border-bottom: 3px double #2a2a2a;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.02) 100%
+  );
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.masthead-top {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Merriweather", serif;
+  font-size: 0.6rem;
+  color: #4a4a4a;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.newspaper-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-align: center;
+  margin: 0.4rem 0;
+  color: #1a1a1a;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.masthead-bottom {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Merriweather", serif;
+  font-size: 0.65rem;
+  color: #4a4a4a;
+  margin-top: 0.4rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid #d4c5b0;
+}
+
+.motto {
+  font-style: italic;
+}
+
+.border-decoration {
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    #2a2a2a 20%,
+    #2a2a2a 80%,
+    transparent 100%
+  );
+  margin: 0 2rem;
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.footer-decoration {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    #8b7765 50%,
+    transparent 100%
+  );
+  margin: 0 2rem;
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  margin-top: auto;
+  margin-bottom: 1.25rem;
+}
+
+.article-content {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.section-header {
+  font-family: "Old Standard TT", serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #666;
+  border-bottom: 1px solid #2a2a2a;
+  padding-bottom: 0.25rem;
+  flex-shrink: 0;
+}
+
+.headline {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a1a1a;
+  letter-spacing: -0.01em;
+  flex-shrink: 0;
+}
+
+.byline {
+  font-family: "Merriweather", serif;
+  font-size: 0.65rem;
+  color: #666;
+  border-bottom: 1px solid #e0d5c7;
+  flex-shrink: 0;
+}
+
+.author {
+  font-weight: 700;
+  color: #2a2a2a;
+}
+
+.article-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-family: "Merriweather", serif;
+  flex: 1;
+}
+
+.column p {
+  font-size: 0.75rem;
+  color: #2a2a2a;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.column p:last-child {
+  margin-bottom: 0;
+}
+
+/* Drop cap */
+.drop-cap::first-letter {
+  font-family: "Playfair Display", serif;
+  float: left;
+  font-size: 3rem;
+  line-height: 0.85;
+  font-weight: 700;
+  margin: 0.05rem 0.15rem 0 0;
+  color: #1a1a1a;
+}
+
+.good-spacing .article-content {
+  padding: 1.5rem 2rem;
+  gap: 1rem;
+}
+
+.good-spacing .headline {
+  margin-bottom: 0.75rem;
+}
+
+.good-spacing .byline {
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+}
+
+.good-spacing .article-columns {
+  gap: 1.75rem;
+}
+
+.good-spacing .column p {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.good-spacing .drop-cap::first-letter {
+  font-size: 3.25rem;
+}
+
+/* Bad spacing version */
+.bad-spacing .article-content {
+  padding: 1rem 1.5rem;
+  gap: 0.4rem;
+}
+
+.bad-spacing .headline {
+  font-size: 1.35rem;
+  margin-bottom: 0.35rem;
+  line-height: 1.1;
+}
+
+.bad-spacing .section-header {
+  margin-bottom: 0.4rem;
+}
+
+.bad-spacing .byline {
+  margin-bottom: 0.4rem;
+  padding-bottom: 0.35rem;
+  font-size: 0.6rem;
+}
+
+.bad-spacing .article-columns {
+  gap: 1.25rem;
+}
+
+.bad-spacing .column p {
+  font-size: 0.7rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.bad-spacing .drop-cap::first-letter {
+  font-size: 2.5rem;
+  margin-right: 0.1rem;
+}
+
+@media (max-width: 640px) {
+  .newspaper-container {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .newspaper-title {
+    font-size: 2rem;
+  }
+
+  .article-columns {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .good-spacing .article-columns {
+    gap: 1.25rem;
+  }
+}
