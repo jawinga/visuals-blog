@@ -2,10 +2,10 @@
 
 ## Setup & Configuration
 
-- [ ] Install Framer Motion
-- [ ] Add fonts (Google Fonts: Libre Baskerville + Inter)
-- [ ] Set up SCSS variables (\_variables.scss, \_typography.scss, \_mixins.scss)
-- [ ] Create global styles (reset, base typography, layout utilities)
+- [x] Install Framer Motion
+- [x] Add fonts (Google Fonts: Libre Baskerville + Inter)
+- [x] Set up SCSS variables (\_variables.scss, \_typography.scss, \_mixins.scss)
+- [] Create global styles (reset, base typography, layout utilities)
 
 ## Project Structure
 
