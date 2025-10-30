@@ -1,12 +1,12 @@
 .app {
   display: flex;
-  overflow-x: hidden;
+  overflow-x: auto;
   overflow-y: hidden;
-  scroll-snap-align: x mandatory;
+  scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   overscroll-behavior-x: contain;
-  min-width: 100vw;
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
   scrollbar-width: none;
   -ms-overflow-style: none;
   -webkit-overflow-scrolling: touch;
@@ -15,7 +15,6 @@
     display: none;
   }
 }
-
 // min-width: 100vw;
 // min-height: 100vh;
 // display: flex;

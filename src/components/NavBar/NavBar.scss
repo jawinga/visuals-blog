@@ -1,0 +1,23 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem 3rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: rgba(255, 255, 255, 0.95);
+  z-index: 100;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    span {
+      font-family: "Newsreader", serif;
+      font-weight: 400;
+      font-size: 1.125rem;
+      text-transform: uppercase;
+    }
+  }
+}
