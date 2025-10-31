@@ -33,11 +33,6 @@ const Newspaper = ({ isOn }: NewspaperInterface) => {
 
             <h2 className="headline">The Power of Breathing Room</h2>
 
-            <div className="byline">
-              By <span className="author">Margaret Whitmore</span> | Design
-              Editor
-            </div>
-
             <div className="article-columns">
               <div className="column">
                 <p className="drop-cap">
@@ -71,12 +66,6 @@ const Newspaper = ({ isOn }: NewspaperInterface) => {
             <div className="section-header">DESIGN & TYPOGRAPHY</div>
 
             <h2 className="headline">The Perils of Cramped Design</h2>
-
-            <div className="byline">
-              By <span className="author">Margaret Whitmore</span> | Design
-              Editor
-            </div>
-
             <div className="article-columns">
               <div className="column">
                 <p className="drop-cap">

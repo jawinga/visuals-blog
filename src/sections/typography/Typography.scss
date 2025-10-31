@@ -1,0 +1,50 @@
+.section--typography {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .typography-content {
+    display: flex;
+    gap: 3rem;
+    width: 100%;
+    max-width: 1200px;
+  }
+}
+
+.sliders {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 400px;
+  flex-shrink: 0;
+}
+
+.preview-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container--typography {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.sliders_paragraph {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  gap: 3rem;
+}
+
+article {
+  color: white;
+  background-color: black;
+  border-radius: 7px;
+  padding: 2rem;
+}

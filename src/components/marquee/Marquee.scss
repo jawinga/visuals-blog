@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,546&family=New+Rocker&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Oswald:wght@339&family=Schoolbell&display=swap");
+
+.marquee-container {
+  overflow: hidden;
+  width: 200px;
+  height: 100vh;
+  position: relative;
+}
+
+.marquee-wrapper {
+  position: absolute;
+  animation: marquee 30s linear infinite;
+}
+
+.marquee-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 100px;
+
+  span {
+    display: block;
+    line-height: 1;
+    margin: 10px 0;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
