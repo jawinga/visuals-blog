@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@600;700&family=Bebas+Neue&family=Oswald:wght@600&family=Merriweather:wght@700;900&family=Source+Sans+3:wght@400;600&family=Lora:wght@400;600&family=Open+Sans:wght@400;600&family=Roboto:wght@400;500&family=Crimson+Text:wght@400;600&display=swap");
+.section--font-pairing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selector-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.forms {
+  min-width: 40%;
+  width: 40%;
+}
+
+.form-result-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 4rem;
+}
+
+.title {
+  text-align: center;
+}
+
+.text-sample {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  line-height: 1.5;
+}
+
+select {
+  border: 2px solid #dddddd;
+  background: #eeeeee;
+  padding: 10px;
+  transition: 0.4s;
+}
+
+option {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+
+  border: 2px solid #dddddd;
+  background: #eeeeee;
+  padding: 10px;
+  transition: 0.4s;
+}

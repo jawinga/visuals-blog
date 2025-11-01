@@ -5,6 +5,7 @@ import WhiteSpace from "./sections/whitespace/WhiteSpace";
 import Typography from "./sections/typography/Typography";
 import { useState } from "react";
 import Dashboard from "./sections/dashboard/Dashboard";
+import FontPairing from "./sections/font-pairing/FontPairing";
 
 function App() {
   const [fontSize, setFontSize] = useState(12);
@@ -30,6 +31,7 @@ function App() {
           lineHeight={lineHeight}
           lineLength={lineLength}
         ></Dashboard>
+        <FontPairing></FontPairing>
       </div>
     </div>
   );

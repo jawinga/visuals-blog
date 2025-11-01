@@ -45,7 +45,18 @@ const Dashboard = ({ fontSize, lineHeight, lineLength }: DashboardProps) => {
         }}
       />
 
-      <h1>{overallScore}/100</h1>
+      <div className="score-text">
+        <h1>Score: {overallScore}/100</h1>
+        {overallScore <= 50 ? (
+          <h1>Try again...</h1>
+        ) : overallScore <= 75 ? (
+          <h1>That's great!</h1>
+        ) : overallScore <= 90 ? (
+          <h1>Superb effort!</h1>
+        ) : (
+          <h1>Perfect score!</h1>
+        )}
+      </div>
     </Section>
   );
 };

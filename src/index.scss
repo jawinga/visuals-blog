@@ -1,6 +1,7 @@
 @use "./scss/reset";
 @use "./scss/typograhy";
 @use "./scss/variables" as *;
+
 body {
   background-color: $bg-main;
 }
