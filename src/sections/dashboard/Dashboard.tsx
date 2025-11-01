@@ -3,6 +3,8 @@ import "./Dashboard.scss";
 import Section from "../../components/Section/Section";
 import { RadarChart } from "@mui/x-charts/RadarChart";
 import { calculateTypographyScores } from "../../utils/typographyScores";
+import { calculateOverallScore } from "../../utils/calculateOverallScore";
+import { useMemo } from "react";
 
 interface DashboardProps {
   fontSize: number;
@@ -11,19 +13,23 @@ interface DashboardProps {
 }
 
 const Dashboard = ({ fontSize, lineHeight, lineLength }: DashboardProps) => {
-  const scores = calculateTypographyScores({
-    fontSize,
-    lineHeight,
-    lineLength,
-  });
+  const scores = useMemo(
+    () => calculateTypographyScores({ fontSize, lineHeight, lineLength }),
+    [fontSize, lineHeight, lineLength]
+  );
+
+  const overallScore = useMemo(
+    () => calculateOverallScore(fontSize, lineHeight, lineLength),
+    [scores]
+  );
 
   return (
     <Section id="dashboard">
       <RadarChart
-        height={500}
+        height={600}
         series={[
           {
-            label: "Typography Metrics",
+            // label: "Typography Metrics",
             data: [
               scores.readability,
               scores.spacing,
@@ -38,6 +44,8 @@ const Dashboard = ({ fontSize, lineHeight, lineLength }: DashboardProps) => {
           metrics: ["Readability", "Spacing", "Balance", "Flow"],
         }}
       />
+
+      <h1>{overallScore}/100</h1>
     </Section>
   );
 };
