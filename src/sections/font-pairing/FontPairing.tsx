@@ -1,98 +1,16 @@
 import "./FontPairing.scss";
 import Section from "../../components/Section/Section";
 import { useState } from "react";
-import { Shapes, Sparkles, Contrast } from "lucide-react";
+import { Briefcase, Palette, Contrast } from "lucide-react";
 import Result from "../../components/result/Result";
+import resultsPairing from "../../utils/resultsPairing";
+import { headingFonts, bodyFonts } from "../../utils/fonts";
 
 const FontPairing = () => {
-  const headingFonts = [
-    {
-      id: 1,
-      name: "Playfair Display",
-      family: "'Playfair Display', serif",
-      category: "serif",
-      style: "Elegant Serif",
-      weight: 700,
-    },
-    {
-      id: 2,
-      name: "Montserrat",
-      family: "'Montserrat', sans-serif",
-      category: "sans-serif",
-      style: "Modern Sans",
-      weight: 600,
-    },
-    {
-      id: 3,
-      name: "Bebas Neue",
-      family: "'Bebas Neue', sans-serif",
-      category: "display",
-      style: "Bold Display",
-      weight: 400,
-    },
-    {
-      id: 4,
-      name: "Oswald",
-      family: "'Oswald', sans-serif",
-      category: "sans-serif",
-      style: "Strong Sans",
-      weight: 600,
-    },
-    {
-      id: 5,
-      name: "Merriweather",
-      family: "'Merriweather', serif",
-      category: "serif",
-      style: "Classic Serif",
-      weight: 700,
-    },
-  ];
-  const bodyFonts = [
-    {
-      id: 1,
-      name: "Source Sans Pro",
-      family: "'Source Sans 3', sans-serif",
-      category: "sans-serif",
-      style: "Clean Sans",
-      weight: 400,
-    },
-    {
-      id: 2,
-      name: "Lora",
-      family: "'Lora', serif",
-      category: "serif",
-      style: "Elegant Serif",
-      weight: 400,
-    },
-    {
-      id: 3,
-      name: "Open Sans",
-      family: "'Open Sans', sans-serif",
-      category: "sans-serif",
-      style: "Friendly Sans",
-      weight: 400,
-    },
-    {
-      id: 4,
-      name: "Roboto",
-      family: "'Roboto', sans-serif",
-      category: "sans-serif",
-      style: "Modern Sans",
-      weight: 400,
-    },
-    {
-      id: 5,
-      name: "Crimson Text",
-      family: "'Crimson Text', serif",
-      category: "serif",
-      style: "Classic Serif",
-      weight: 400,
-    },
-  ];
+  const [titleFont, setTitleFont] = useState(headingFonts[0].family);
+  const [bodyFont, setBodyFont] = useState(bodyFonts[0].family);
 
-  const [result, setResult] = useState("");
-  const [titleFont, setTitleFont] = useState("");
-  const [bodyFont, setBodyFont] = useState("");
+  const pairingResults = resultsPairing(titleFont, bodyFont);
 
   return (
     <Section id="font-pairing">
@@ -130,7 +48,27 @@ const FontPairing = () => {
         </div>
       </div>
 
-      {result.length > 0 && result}
+      {titleFont && bodyFont ? (
+        <div className="font-results">
+          <Result
+            icon={Briefcase}
+            label="Use Cases"
+            results={pairingResults.useCases}
+          ></Result>
+          <Result
+            icon={Palette}
+            label="Personality"
+            results={pairingResults.personality}
+          ></Result>
+          <Result
+            icon={Contrast}
+            label="Contrast Level"
+            results={pairingResults.contrastLevel}
+          ></Result>
+        </div>
+      ) : (
+        ""
+      )}
     </Section>
   );
 };
