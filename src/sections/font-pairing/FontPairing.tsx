@@ -54,12 +54,16 @@ const FontPairing = () => {
             icon={Briefcase}
             label="Use Cases"
             results={pairingResults.useCases}
+            className="delimiter"
           ></Result>
+          <hr></hr>
           <Result
             icon={Palette}
             label="Personality"
             results={pairingResults.personality}
+            className="delimiter"
           ></Result>
+          <hr></hr>
           <Result
             icon={Contrast}
             label="Contrast Level"
