@@ -6,6 +6,7 @@ import Typography from "./sections/typography/Typography";
 import { useState } from "react";
 import Dashboard from "./sections/dashboard/Dashboard";
 import FontPairing from "./sections/font-pairing/FontPairing";
+import Motion from "./sections/motion/Motion";
 
 function App() {
   const [fontSize, setFontSize] = useState(12);
@@ -32,6 +33,7 @@ function App() {
           lineLength={lineLength}
         ></Dashboard>
         <FontPairing></FontPairing>
+        <Motion></Motion>
       </div>
     </div>
   );
